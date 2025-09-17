@@ -5,14 +5,13 @@ using System.Collections.ObjectModel;
 
 
 
-public partial class SwipeHostViewModel : ObservableObject
+public partial class SwipeHostViewModel: ObservableObject
 {
     public ObservableCollection<int> Screens
     {
         get { return new() { 0, 1, 2, 3, 4 }; }
     }
-
-    
+        
 
     private int _CurrentIndex;
 

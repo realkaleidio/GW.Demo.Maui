@@ -16,7 +16,7 @@ public partial class AppShell: Shell
             int idx = -1;
             if(!int.TryParse(s, out idx)) { idx = -1; }
 
-            if (Shell.Current.CurrentPage is Views.SwipeHostPage p)
+            if(Shell.Current.CurrentPage is Views.SwipeHostPage p)
             {
                 p.NavigateTo(idx);
             }
