@@ -5,8 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:vm="clr-namespace:GW.Demo.Maui.ViewModels"
     Loaded="_OnLoaded" Unloaded="_OnUnloaded">
-
-    <ContentView.Resources><vm:PositionViewModel x:Key="VM" /></ContentView.Resources>
+    <ContentView.Resources><vm:PositionViewModel x:Key="VM" /></ContentView.Resources>    
     
     <Grid BackgroundColor="{DynamicResource PrimaryContainer}" Padding="24" RowDefinitions="*,Auto,*">
         <Label Grid.Row="1" Text="Position" FontSize="18" Opacity="0.75" HorizontalOptions="Center" HorizontalTextAlignment="Center" TranslationY="-68"/>

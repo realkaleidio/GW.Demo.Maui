@@ -1,7 +1,10 @@
 ﻿namespace GW.Demo.Maui;
 
 using Microsoft.Extensions.Logging;
-
+using CommunityToolkit.Maui;
+using GW.Demo.Maui.ViewModels;
+using GW.Demo.Maui.Views;
+using GW.Demo.Maui.Posts;
 
 public static class MauiProgram
 {
@@ -10,6 +13,7 @@ public static class MauiProgram
         var builder = MauiApp.CreateBuilder();
         builder
             .UseMauiApp<App>()
+            .UseMauiCommunityToolkit()
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -20,8 +24,11 @@ public static class MauiProgram
         builder.Logging.AddDebug();
 #endif
 
-        builder.Services.AddTransient<GW.Demo.Maui.ViewModels.SwipeHostViewModel>();
-        builder.Services.AddTransient<GW.Demo.Maui.Views.SwipeHostPage>();
+        builder.Services.AddTransient<SwipeHostViewModel>()
+                        .AddTransient<SwipeHostPage>()
+                        .AddTransient<PostsViewModel>()
+                        .AddSingleton<PostsStore>()
+                        .AddHttpClient<IPostsClient, PostsClient>();
 
         var app = builder.Build();
         ServiceHelper.Services = app.Services;
