@@ -34,7 +34,17 @@
 	</array>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/appicon.appiconset</string>
-  <key>NSLocationWhenInUseUsageDescription</key>
-  <string>Die App benötigt Ihren Standort, um die aktuelle Position anzuzeigen.</string>
+	
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Die App benötigt Ihren Standort, um die aktuelle Position anzuzeigen.</string>
+
+	<key>NSCameraUsageDescription</key>
+	<string>Die App benötigt Kamera-Zugriff, um Fotos aufzunehmen.</string>
+
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Die App speichert aufgenommene Fotos in der Fotomediathek.</string>
+
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Die App benötigt Zugriff auf die Fotomediathek, um Bilder auszuwählen.</string>
 </dict>
 </plist>
