@@ -14,6 +14,7 @@ using GW.Demo.Maui.Posts;
 
 public class PostsViewModel: ObservableObject
 {
+    private static readonly HttpClient _HttpClient = new HttpClient();
     private readonly PostsStore _Store;
     private CancellationTokenSource? _Cts;
     private string _Query = string.Empty;
@@ -22,6 +23,10 @@ public class PostsViewModel: ObservableObject
     private IAsyncRelayCommand? _RefreshCommand;
     private IAsyncRelayCommand? _SaveLocalCommand;
     private IAsyncRelayCommand? _LoadLocalCommand;
+
+
+    public PostsViewModel(): this(ServiceHelper.GetService<PostsStore>() ?? new PostsStore(new PostsClient(_HttpClient)))
+    {}
 
 
     public PostsViewModel(PostsStore store)

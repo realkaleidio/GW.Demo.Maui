@@ -7,9 +7,12 @@ using System.Collections.ObjectModel;
 
 public partial class SwipeHostViewModel: ObservableObject
 {
+    private readonly ObservableCollection<int> _Screens = new() { 0, 1, 2, 3, 4 };
+
+
     public ObservableCollection<int> Screens
     {
-        get { return new() { 0, 1, 2, 3, 4 }; }
+        get { return _Screens; }
     }
         
 
