@@ -8,7 +8,7 @@ using System.Collections.ObjectModel;
 public partial class SwipeHostViewModel: ObservableObject
 {
     private readonly ObservableCollection<int> _Screens = new() { 0, 1, 2, 3, 4 };
-
+    private readonly string[] _Titles = new[] { "Position", "Posts", "Video", "Foto", "Kontakte" };
 
     public ObservableCollection<int> Screens
     {
@@ -22,6 +22,15 @@ public partial class SwipeHostViewModel: ObservableObject
     public int CurrentIndex
     {
         get { return _CurrentIndex; }
-        set { SetProperty(ref _CurrentIndex, value); }
+        set 
+        {
+            if(SetProperty(ref _CurrentIndex, value)) { OnPropertyChanged(nameof(CurrentTitle)); }
+        }
+    }
+
+
+    public string CurrentTitle
+    {
+        get { return _Titles[_CurrentIndex]; }
     }
 }
