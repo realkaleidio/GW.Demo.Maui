@@ -2,10 +2,12 @@
 <ContentView
     x:Class="GW.Demo.Maui.Views.Screens.VideoView"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
-    <Grid BackgroundColor="{DynamicResource PrimaryContainer}" Padding="24">
-        <VerticalStackLayout Spacing="12" VerticalOptions="Center" HorizontalOptions="Center">
-            <Label Text="Video" FontSize="32" FontAttributes="Bold" />
-        </VerticalStackLayout>
-    </Grid>
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:GW.Demo.Maui.ViewModels"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
+
+    <ContentView.Resources><vm:VideoViewModel x:Key="VM" /></ContentView.Resources>
+
+    <toolkit:MediaElement Grid.Row="1" Source="{Binding VideoUrl, Source={StaticResource VM}}" ShouldAutoPlay="True" ShouldShowPlaybackControls="True"
+                          ShouldKeepScreenOn="True" Aspect="AspectFit" />
 </ContentView>

@@ -1,10 +1,13 @@
 ﻿namespace GW.Demo.Maui;
 
-using Microsoft.Extensions.Logging;
 using CommunityToolkit.Maui;
+using CommunityToolkit.Maui.Core;
+
+using GW.Demo.Maui.Posts;
 using GW.Demo.Maui.ViewModels;
 using GW.Demo.Maui.Views;
-using GW.Demo.Maui.Posts;
+
+using Microsoft.Extensions.Logging;
 
 public static class MauiProgram
 {
@@ -14,6 +17,7 @@ public static class MauiProgram
         builder
             .UseMauiApp<App>()
             .UseMauiCommunityToolkit()
+            .UseMauiCommunityToolkitMediaElement(static options => { options.SetDefaultAndroidViewType(AndroidViewType.TextureView); })
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
