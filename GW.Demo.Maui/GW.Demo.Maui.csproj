@@ -21,10 +21,10 @@
 		<Nullable>enable</Nullable>
 
 		<!-- Display name -->
-		<ApplicationTitle>GW.Demo.Maui</ApplicationTitle>
+		<ApplicationTitle>MAUI Demo App</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.gw.demo.maui</ApplicationId>
+		<ApplicationId>gw.demo.maui</ApplicationId>
 
 		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
@@ -60,8 +60,52 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.5" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.110" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.9" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Views\SwipeHostPage.xaml.cs">
+	    <DependentUpon>SwipeHostPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\Screens\ContactsView.xaml.cs">
+	    <DependentUpon>ContactsView.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\Screens\PostsView.xaml.cs">
+	    <DependentUpon>PostsView.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\Screens\PositionView.xaml.cs">
+	    <DependentUpon>PositionView.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\Screens\PhotoView.xaml.cs">
+	    <DependentUpon>PhotoView.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\SwipeHostPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Screens\ContactsView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Screens\PhotoView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Screens\VideoView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Screens\PostsView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Screens\PositionView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Update="Microsoft.Maui.Controls.Compatibility" Version="9.0.110" />
 	</ItemGroup>
 
 </Project>

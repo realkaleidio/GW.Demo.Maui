@@ -1,4 +1,6 @@
-﻿namespace GW.Demo.Maui
+﻿using GW.Demo.Maui.Views;
+
+namespace GW.Demo.Maui
 {
     public partial class App : Application
     {
