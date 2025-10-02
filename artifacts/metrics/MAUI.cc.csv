@@ -1,0 +1,64 @@
+Type;Member;CC;CK;ND;SLOC;MI;HV;File
+ContactsViewModel;Task ContactsViewModel._LoadAsync();7;18;5;47;40;1731;ContactsViewModel.cs
+ContactsViewModel;Task ContactsViewModel.CallAsync(ContactItem? item);6;15;5;23;50;617;ContactsViewModel.cs
+PhotoViewModel;void PhotoViewModel.Load();10;10;4;43;42;1103;PhotoViewModel.cs
+PhotoViewModel;Task PhotoViewModel._TakePhotoAsync();5;10;4;27;47;972;PhotoViewModel.cs
+PositionView;void PositionView._OnLoaded(object? sender, EventArgs e);4;6;3;11;58;492;PositionView.xaml.cs
+SwipeHostPage;SwipeHostPage.SwipeHostPage(SwipeHostViewModel vm);4;6;3;15;57;262;SwipeHostPage.xaml.cs
+SwipeHostPage;void SwipeHostPage._Navigate();5;5;2;7;63;342;SwipeHostPage.xaml.cs
+AppShell;AppShell.AppShell();3;3;2;15;55;436;AppShell.xaml.cs
+PostsStore;Task<bool> PostsStore.LoadFromJsonAsync(CancellationToken ct);3;3;2;11;59;343;PostsStore.cs
+PositionViewModel;Task PositionViewModel.RefreshAsync();3;3;2;17;54;430;PositionViewModel.cs
+VideoView;void VideoView._StopAndRelease();3;3;2;9;65;84;VideoView.xaml.cs
+SwipeHostPage;int SwipeHostPage._Count(object itemsSource);3;3;2;5;69;150;SwipeHostPage.xaml.cs
+PostsStore;Task PostsStore.LoadAsync(string? query, CancellationToken ct);3;2;1;5;67;284;PostsStore.cs
+PositionViewModel;string PositionViewModel._FormatLocation(double lat, double lon);3;2;0;5;69;176;PositionViewModel.cs
+PositionView;void PositionView._OnUnloaded(object? sender, EventArgs e);3;2;1;3;77;55;PositionView.xaml.cs
+ScreenTemplateSelector;DataTemplate ScreenTemplateSelector.OnSelectTemplate(object item, BindableObject container);2;1;1;15;58;172;ScreenTemplateSelector.cs
+ContactsViewModel;Task ContactsViewModel.RefreshAsync();2;1;1;9;64;144;ContactsViewModel.cs
+PhotoViewModel;void PhotoViewModel._EnsurePhotoDir();2;1;1;4;73;89;PhotoViewModel.cs
+PostsViewModel;Task PostsViewModel.OnAppearingAsync();2;1;1;3;78;45;PostsViewModel.cs
+PostsViewModel;Task PostsViewModel._LoadAsync();2;1;0;10;62;195;PostsViewModel.cs
+PostsViewModel;void PostsViewModel._CancelPending();2;1;1;5;71;72;PostsViewModel.cs
+VideoViewModel;Task VideoViewModel.OnAppearingAsync();2;1;1;3;78;47;VideoViewModel.cs
+ContactsView;void ContactsView.OnLoaded(object? sender, EventArgs e);2;1;1;6;67;158;ContactsView.xaml.cs
+VideoView;void VideoView._OnHandlerChanged(object? sender, EventArgs e);2;1;1;8;66;90;VideoView.xaml.cs
+VideoView;void VideoView._Unhook();2;1;1;7;68;72;VideoView.xaml.cs
+SwipeHostPage;void SwipeHostPage.OnBindingContextChanged();2;1;1;5;70;106;SwipeHostPage.xaml.cs
+SwipeHostPage;void SwipeHostPage.OnDisappearing();2;1;1;4;73;88;SwipeHostPage.xaml.cs
+App;App.App();1;0;0;3;83;8;App.xaml.cs
+App;Window App.CreateWindow(IActivationState? activationState);1;0;0;3;79;28;App.xaml.cs
+ContactItem;ContactItem.ContactItem(string displayName, string phoneNumber);1;0;0;4;78;21;ContactItem.cs
+MauiProgram;MauiApp MauiProgram.CreateMauiApp();1;0;0;23;50;704;MauiProgram.cs
+MainApplication;MainApplication.MainApplication(nint handle, JniHandleOwnership ownership);1;0;0;2;91;2;MainApplication.cs
+MainApplication;MauiApp MainApplication.CreateMauiApp();1;0;0;1;92;12;MainApplication.cs
+PostsClient;PostsClient.PostsClient(HttpClient httpClient);1;0;0;3;78;48;PostsClient.cs
+PostsClient;Task<PostsResponse> PostsClient.GetAllAsync(int limit, int skip, CancellationToken ct);1;0;0;6;66;223;PostsClient.cs
+PostsClient;Task<PostsResponse> PostsClient.GetAsync(string query, int limit, int skip, CancellationToken ct);1;0;0;6;66;280;PostsClient.cs
+PostsStore;PostsStore.PostsStore(IPostsClient client);1;0;0;4;74;74;PostsStore.cs
+PostsStore;Task PostsStore.SaveAsJsonAsync(CancellationToken ct);1;0;0;11;59;348;PostsStore.cs
+ServiceHelper;T ServiceHelper.GetService<T>();1;0;0;3;77;55;ServiceHelper.cs
+ContactsViewModel;ContactsViewModel.ContactsViewModel();1;0;0;1;98;2;ContactsViewModel.cs
+PhotoViewModel;PhotoViewModel.PhotoViewModel();1;0;0;3;77;70;PhotoViewModel.cs
+PhotoViewModel;string PhotoViewModel.GetPhotosFolderPath();1;0;0;5;71;86;PhotoViewModel.cs
+PositionViewModel;PositionViewModel.PositionViewModel();1;0;0;3;81;16;PositionViewModel.cs
+PostsViewModel;PostsViewModel.PostsViewModel();1;0;0;1;98;2;PostsViewModel.cs
+PostsViewModel;PostsViewModel.PostsViewModel(PostsStore store);1;0;0;4;76;38;PostsViewModel.cs
+PostsViewModel;void PostsViewModel._OnItemsChanged(object? sender, NotifyCollectionChangedEventArgs e);1;0;0;3;80;21;PostsViewModel.cs
+VideoViewModel;Task VideoViewModel.RefreshAsync();1;0;0;6;68;143;VideoViewModel.cs
+VideoViewModel;void VideoViewModel.OnDisappearing();1;0;0;1;98;2;VideoViewModel.cs
+ContactsView;ContactsView.ContactsView();1;0;0;4;77;22;ContactsView.xaml.cs
+PhotoView;PhotoView.PhotoView();1;0;0;5;72;55;PhotoView.xaml.cs
+PhotoView;void PhotoView._OnLoaded(object? sender, EventArgs e);1;0;0;3;78;47;PhotoView.xaml.cs
+PhotoView;void PhotoView._OnUnloaded(object? sender, EventArgs e);1;0;0;4;76;36;PhotoView.xaml.cs
+PositionView;PositionView.PositionView();1;0;0;3;83;8;PositionView.xaml.cs
+PostsView;PostsView.PostsView();1;0;0;7;67;114;PostsView.xaml.cs
+VideoView;VideoView.VideoView();1;0;0;5;68;212;VideoView.xaml.cs
+VideoView;void VideoView._OnLoaded(object? sender, EventArgs e);1;0;0;3;77;52;VideoView.xaml.cs
+VideoView;void VideoView._OnUnloaded(object? sender, EventArgs e);1;0;0;5;71;79;VideoView.xaml.cs
+VideoView;void VideoView._OnWindowStopped(object? sender, EventArgs e);1;0;0;3;83;8;VideoView.xaml.cs
+VideoView;void VideoView._OnWindowResumed(object? sender, EventArgs e);1;0;0;1;98;2;VideoView.xaml.cs
+SwipeHostPage;SwipeHostPage.SwipeHostPage();1;0;0;1;98;2;SwipeHostPage.xaml.cs
+SwipeHostPage;void SwipeHostPage.NavigateTo(int index);1;0;0;4;77;22;SwipeHostPage.xaml.cs
+SwipeHostPage;void SwipeHostPage._OnItemsChanged(object? sender, NotifyCollectionChangedEventArgs e);1;0;0;3;83;8;SwipeHostPage.xaml.cs
+SwipeHostPage;void SwipeHostPage.OnAppearing();1;0;0;4;77;28;SwipeHostPage.xaml.cs

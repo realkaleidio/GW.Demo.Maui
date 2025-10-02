@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="GW.Demo.Maui.Views.SwipeHostPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:screens="clr-namespace:GW.Demo.Maui.Views.Screens"
+    xmlns:sel="clr-namespace:GW.Demo.Maui.Selectors"
+    Title="{Binding CurrentTitle}">
+
+    <ContentPage.Resources>
+        <sel:ScreenTemplateSelector x:Key="ScreenTemplates">
+            <sel:ScreenTemplateSelector.PositionTemplate>
+                <DataTemplate>
+                    <screens:PositionView />
+                </DataTemplate>
+            </sel:ScreenTemplateSelector.PositionTemplate>
+            <sel:ScreenTemplateSelector.PostsTemplate>
+                <DataTemplate>
+                    <screens:PostsView />
+                </DataTemplate>
+            </sel:ScreenTemplateSelector.PostsTemplate>
+            <sel:ScreenTemplateSelector.VideoTemplate>
+                <DataTemplate>
+                    <screens:VideoView />
+                </DataTemplate>
+            </sel:ScreenTemplateSelector.VideoTemplate>
+            <sel:ScreenTemplateSelector.PhotoTemplate>
+                <DataTemplate>
+                    <screens:PhotoView />
+                </DataTemplate>
+            </sel:ScreenTemplateSelector.PhotoTemplate>
+            <sel:ScreenTemplateSelector.ContactsTemplate>
+                <DataTemplate>
+                    <screens:ContactsView />
+                </DataTemplate>
+            </sel:ScreenTemplateSelector.ContactsTemplate>
+        </sel:ScreenTemplateSelector>
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="*,Auto" Padding="0">
+        <CarouselView
+            x:Name="Carousel"
+            ItemsSource="{Binding Screens}"
+            Position="{Binding CurrentIndex, Mode=TwoWay}"
+            ItemTemplate="{StaticResource ScreenTemplates}"
+            IndicatorView="{x:Reference Dots}"
+            IsSwipeEnabled="True"
+            IsBounceEnabled="True"
+            PeekAreaInsets="0"
+            ItemsLayout="HorizontalList" />
+        
+        <IndicatorView
+            x:Name="Dots"
+            Grid.Row="1"
+            HorizontalOptions="Center"
+            VerticalOptions="End"
+            Margin="0,0,0,16" />
+    </Grid>
+</ContentPage>

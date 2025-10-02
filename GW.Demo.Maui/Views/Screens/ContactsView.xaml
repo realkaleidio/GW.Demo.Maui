@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="GW.Demo.Maui.Views.Screens.ContactsView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:GW.Demo.Maui.ViewModels">
+
+    <ContentView.Resources><vm:ContactsViewModel x:Key="VM" /></ContentView.Resources>
+    <ContentView.BindingContext><StaticResource Key="VM" /></ContentView.BindingContext>
+
+    <Grid Padding="16">
+        <VerticalStackLayout IsVisible="{Binding IsUnsupported, Source={StaticResource VM}}" Spacing="6" HorizontalOptions="Center" VerticalOptions="Center">
+            <Label Text="Service wird nicht unterstützt" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+            <Label Text="{Binding UnsupportedReason, Source={StaticResource VM}}" FontSize="14" Opacity="0.8" HorizontalTextAlignment="Center" />
+        </VerticalStackLayout>
+
+        <RefreshView IsVisible="{Binding IsSupported, Source={StaticResource VM}}" IsRefreshing="{Binding IsRefreshing, Source={StaticResource VM}}"
+                     Command="{Binding RefreshCommand, Source={StaticResource VM}}">
+            <CollectionView ItemsSource="{Binding Contacts, Source={StaticResource VM}}" SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="12">
+                            <Label Text="{Binding DisplayName}" FontSize="16" />
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={StaticResource VM}, Path=CallCommand}" CommandParameter="{Binding .}" />
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </RefreshView>
+        <Grid
+            IsVisible="{Binding IsRefreshing, Source={StaticResource VM}}"
+            BackgroundColor="#80000000" InputTransparent="True">
+            <ActivityIndicator IsRunning="{Binding IsRefreshing, Source={StaticResource VM}}" VerticalOptions="Center" HorizontalOptions="Center" Scale="1.2" />
+        </Grid>
+    </Grid>
+</ContentView>

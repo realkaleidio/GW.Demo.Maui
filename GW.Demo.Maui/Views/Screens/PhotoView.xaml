@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+    x:Class="GW.Demo.Maui.Views.Screens.PhotoView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:GW.Demo.Maui.ViewModels">
+
+    <ContentView.Resources><vm:PhotoViewModel x:Key="VM" /></ContentView.Resources>
+
+    <Grid>
+        <Image Aspect="AspectFit" Source="{Binding PhotoSource, Source={StaticResource VM}}" IsVisible="{Binding HasPhoto, Source={StaticResource VM}}" />
+
+        <Button Text="📷" CornerRadius="24" WidthRequest="48" HeightRequest="48" Padding="0" HorizontalOptions="End" VerticalOptions="End" Margin="16"
+                Command="{Binding TakePhotoCommand, Source={StaticResource VM}}" />
+    </Grid>
+</ContentView>
